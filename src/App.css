@@ -32,3 +32,24 @@
   color: #007bff;
   text-transform: uppercase;
 }
+
+.category-header {
+  font-size: 1.8rem;
+  font-weight: 800; /* Extra Bold */
+  color: #222;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid #007acc; /* Adds a nice underline to the header */
+  display: inline-block;
+  padding-right: 20px;
+}
+
+.course-section {
+  margin-bottom: 2rem;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}

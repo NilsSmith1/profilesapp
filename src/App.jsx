@@ -22,6 +22,16 @@ const courses = [
 ];
 
 function App() {
+
+  const groupedCourses = courses.reduce((groups, course) => {
+    const type = course.category;
+    if (!groups[course.category]) {
+      groups[course.category] = [];
+    }
+    groups[course.category].push(course);
+    return groups;
+  }, {});
+
   const [count, setCount] = useState(0)
 
   return (
@@ -34,10 +44,15 @@ function App() {
 
 
 
-    <section>
-    <h2>Relavent Course List</h2>
+<h2>Relavent Course List</h2>
+
+    {Object.keys(groupedCourses).map(category => (
+      <section key={category} className="course-category">
+        <h2 className="category-title">{category}</h2>
+
+    
     <div className="course-list">
-      {courses.map(course => (
+      {groupedCourses[category].map(course => (
     <div key={course.id} className="course-card">
               <span className="course-code">{course.code}</span>
               <h3>{course.name}</h3>
@@ -46,11 +61,12 @@ function App() {
       ))}
     </div>
       </section>
-    </div>
+    ))}
       
-      
+     </div>
     </>
   )
 }
+
 
 export default App

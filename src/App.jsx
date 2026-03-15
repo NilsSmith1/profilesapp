@@ -26,13 +26,29 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className="container">
+        <header>
         <h1>Nils Smith </h1>
+      <p>Math & Computer Science Student at the University of Minnesota Duluth</p>
+      </header>
+
+
+
+    <section>
+    <h2>Relavent Course List</h2>
+    <div className="course-list">
+      {courses.map(course => (
+    <div key={course.id} className="course-card">
+              <span className="course-code">{course.code}</span>
+              <h3>{course.name}</h3>
+              <p>{course.description}</p>
+            </div>
+      ))}
+    </div>
+      </section>
+    </div>
       
-      </div>
-  
-    
-     
+      
     </>
   )
 }

@@ -1,3 +1,6 @@
+
+
+
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -15,9 +18,9 @@ const courses = [
   { id: 8, name: "Data Structures and Analysis", code: "CS1632", category: "Computer Science", description: "Fundamental data structures and algorithms for efficient problem-solving." },
   { id: 9, name: "Computer Organization and Architecture", code: "CS2521", category: "Computer Science", description: "Structure and behavior of computer systems, including hardware and software interaction." },
   // Elective courses
-  { id: 10, name: "General Physics I", code: "PHYS2013", category: "Elective", description: "Introduction to the fundamental principles of physics." },
-  { id: 11, name: "	Introduction to Environmental Science", code: "EES1130", category: "Elective", description: "Introduction to environmental science and sustainability." },
-  { id: 12, name: "Principles of Economics: Macroeconomics", code: "ECON1022", category: "Elective", description: "Introduction to macroeconomic principles, including economic growth, inflation, and monetary policy."
+  { id: 10, name: "General Physics I", code: "PHYS2013", category: "Electives", description: "Introduction to the fundamental principles of physics." },
+  { id: 11, name: "	Introduction to Environmental Science", code: "EES1130", category: "Electives", description: "Introduction to environmental science and sustainability." },
+  { id: 12, name: "Principles of Economics: Macroeconomics", code: "ECON1022", category: "Electives", description: "Introduction to macroeconomic principles, including economic growth, inflation, and monetary policy."
  }
 ];
 

@@ -3,6 +3,7 @@
 
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
+import mhPortrait from './assets/mhportrait-15.jpg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
@@ -27,9 +28,6 @@ const courses = [
 
 function App() {
 
-
-  <img src="mhportrait-15.jpg" alt="Nils Smith" width="500" height="333"></img>
-
   const groupedCourses = courses.reduce((groups, course) => {
     const type = course.category;
     if (!groups[course.category]) {
@@ -45,13 +43,14 @@ function App() {
     <>
       <div className="container">
         <header>
-        <h1>Nils Smith </h1>
-      <p>Math & Computer Science Student at the University of Minnesota Duluth</p>
-      </header>
+          <h1>Nils Smith</h1>
+          <p>Math & Computer Science Student at the University of Minnesota Duluth</p>
+          <img src={mhPortrait} alt="Nils Smith" width="500" height="333" />
+        </header>
 
 
 
-<h2>Relavent Course List</h2>
+<h2>Relevant Course List</h2>
 
     {Object.keys(groupedCourses).map(category => (
       <section key={category} className="course-category">

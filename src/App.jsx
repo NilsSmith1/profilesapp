@@ -45,7 +45,7 @@ function App() {
         <header>
           <h1>Nils Smith</h1>
           <p>Math & Computer Science Student at the University of Minnesota Duluth</p>
-          <img src={mhPortrait} alt="Nils Smith" width="500" height="333" />
+          <img src={mhPortrait-15} alt="Nils Smith" width="500" height="333" />
         </header>
 
 

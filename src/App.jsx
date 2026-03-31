@@ -7,6 +7,8 @@ import mhPortrait from './assets/mhportrait-15.jpg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+import mhPortrait15 from './assets/mhportrait-15.jpg';
+
 const courses = [
   // Math courses
   { id: 1, name: "Calculus I", code: "MATH1296", category: "Math", description: "Limits, derivatives, and integrals." },
@@ -45,7 +47,7 @@ function App() {
         <header>
           <h1>Nils Smith</h1>
           <p>Math & Computer Science Student at the University of Minnesota Duluth</p>
-          <img src={mhPortrait-15} alt="Nils Smith" width="500" height="333" />
+          <img src={mhPortrait15} alt="Nils Smith" width="500" height="333" />
         </header>
 
 

@@ -5,6 +5,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+
 const courses = [
   // Math courses
   { id: 1, name: "Calculus I", code: "MATH1296", category: "Math", description: "Limits, derivatives, and integrals." },
@@ -25,6 +26,9 @@ const courses = [
 ];
 
 function App() {
+
+
+  <img src="mhportrait-15.jpg" alt="Nils Smith" width="500" height="333"></img>
 
   const groupedCourses = courses.reduce((groups, course) => {
     const type = course.category;

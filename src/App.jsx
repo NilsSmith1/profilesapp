@@ -8,6 +8,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 import mhPortrait15 from './assets/mhportrait-15.jpg';
+import metransparent from './assets/metransparent.png';
 
 const courses = [
   // Math courses
@@ -47,7 +48,7 @@ function App() {
         <header>
           <h1>Nils Smith</h1>
           <p>Math & Computer Science Student at the University of Minnesota Duluth</p>
-          <img src={mhPortrait15} alt="Nils Smith" width="500" height="333" />
+          <img src={metransparent} alt="Nils Smith" width="343" height="379" />
         </header>
 
 

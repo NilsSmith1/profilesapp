@@ -44,17 +44,25 @@ const Coursework = () => {
           </button>
         ))}
       </div>
+        <div className="container">
+            {Object.keys(groupedCourses).map(category => (
+              <section key={category} className="course-section">
+                <h2 className="category-header">{category}</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredCourses.map(course => (
-          <div key={course.id} className="p-5 border rounded-lg shadow-sm hover:shadow-md transition-shadow">
-
-             <span className="course-code">{course.code}</span>
-                  <h3>{course.name}</h3>
-                  <p>{course.description}</p>
-          </div>
-        ))}
-      </div>
+                <div className="course-grid">
+                    {groupedCourses[category].map(course => (
+                        <div key={course.id} className = "course-card">
+                            <span className="course-code">{course.code}</span>
+                            <h3>{course.name}</h3>
+                            <p>{course.description}</p>
+                        </div> 
+                    ))}
+                </div>
+                </section>
+            ))}
+            
+                
+        </div>
     </section>
   );
 };

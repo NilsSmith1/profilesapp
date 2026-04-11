@@ -63,9 +63,8 @@ button:focus-visible {
   transition: 0.3s;
 }
 
-/* This class is applied conditionally in the React code */
 .tab-buttons button.active {
-  border-bottom: 2px solid #646cff; /* Vite purple */
+  border-bottom: 2px solid #646cff; 
   color: #646cff;
   font-weight: bold;
 }

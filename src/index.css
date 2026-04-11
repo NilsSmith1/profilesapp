@@ -54,6 +54,28 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.tab-buttons button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  transition: 0.3s;
+}
+
+/* This class is applied conditionally in the React code */
+.tab-buttons button.active {
+  border-bottom: 2px solid #646cff; /* Vite purple */
+  color: #646cff;
+  font-weight: bold;
+}
+
+.tab-content {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

@@ -26,6 +26,11 @@ const Coursework = () => {
   const [activeTab, setActiveTab] = useState('All');
   const categories = ['All', ...new Set(courses.map(c => c.category))];
   const filteredCourses = activeTab === 'All' ? courses : courses.filter(course => course.category === activeTab);
+  const groupedCourses = filteredCourses.reduce((groups, course) => {
+    if (!groups[course.category]) groups[course.category] = [];
+    groups[course.category].push(course);
+    return groups;
+  }, {});
 
   return (
     <section className="coursework-section">
@@ -60,7 +65,7 @@ const Coursework = () => {
                 </div>
                 </section>
             ))}
-            
+
                 
         </div>
     </section>
@@ -78,8 +83,13 @@ function App() {
 
   return (
     <>
+
+
       <div className="container">
+       
+
         <header>
+            
           <h1>Nils Smith</h1>
           <p>Math & Computer Science Student at the University of Minnesota Duluth</p>
           <img src={metransparent} alt="Nils Smith" width="343" height="379" />

@@ -12,7 +12,7 @@ const courses = [
   { id: 2, name: "Calculus II", code: "MATH1297", category: "Math", description: "Advanced integration techniques, infinite sequences and series, and applications of the definite integra" },
   { id: 3, name: "Intro to Probability and Statistics I", code: "STAT3611", category: "Math", description: "Introduction to probability and statistical inference." },
   { id: 4, name: "Differential Equations with Linear Algebra", code: "MATH3280", category: "Math", description: "First-order differential equations, systems of differential equations, and their applications." },
-  { id: 5, name: "Discrete Mathematics", code: "MATH3355", category: "Math", description: "Logic, sets, relations, and combinatorics." },
+  { id: 5, name: "Discrete Math", code: "MATH3355", category: "Math", description: "Logic, sets, relations, and combinatorics." },
   { id: 6, name: "Intro to Computer Science", code: "CS1612", category: "Computer Science", description: "Introduction to programming and problem-solving." },
   { id: 7, name: "Object-Oriented Prog & Design", code: "CS1622", category: "Computer Science", description: "Introduction to object-oriented programming and software design principles." },
   { id: 8, name: "Data Structures and Analysis", code: "CS1632", category: "Computer Science", description: "Fundamental data structures and algorithms for efficient problem-solving." },
@@ -35,6 +35,7 @@ const Coursework = () => {
   return (
     <section className="coursework-section">
       <h2>University Coursework</h2>
++
 
       <div className="flex gap-4 mb-8 border-b">
         {categories.map(cat => (
@@ -84,22 +85,25 @@ function App() {
   return (
     <>
 
-
       <div className="container">
-       
-
+      
         <header>
-            <h1>This site is under construction </h1>
+            
            <div class="center">
-          <h1>Nils Smith</h1>
-          <p>Math & Computer Science Student at the University of Minnesota Duluth</p>
-          <img src={metransparent} alt="Nils Smith" width="343" height="379" />
+            <h1>This site is under construction</h1>
           </div> 
         </header>
 
-        <Coursework />
+        <header>
+           <div class="center">
+            <h1>Nils Smith</h1>
+            <img src={metransparent} alt="Nils Smith" width="343" height="379" />
+          </div> 
+        </header>
 
-     
+         <p>Math & Computer Science Student at the University of Minnesota Duluth</p>
+
+        <Coursework />
 
         {Object.keys(groupedCourses).map(category => (
           <section key={category} className="course-category">

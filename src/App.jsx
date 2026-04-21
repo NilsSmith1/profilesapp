@@ -1,121 +1,157 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import mhPortrait from './assets/mhportrait-15.jpg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
-import mhPortrait15 from './assets/mhportrait-15.jpg';
+import { useState, useEffect } from 'react'
 import metransparent from './assets/metransparent.png';
+import './App.css'
+import githublogo from './assets/github.png';
+import linkedinlogo from './assets/linkedin.png';
 
 const courses = [
-  { id: 1, name: "Calculus I", code: "MATH1296", category: "Math", description: "Limits, derivatives, and integrals." },
-  { id: 2, name: "Calculus II", code: "MATH1297", category: "Math", description: "Advanced integration techniques, infinite sequences and series, and applications of the definite integra" },
-  { id: 3, name: "Intro to Probability and Statistics I", code: "STAT3611", category: "Math", description: "Introduction to probability and statistical inference." },
-  { id: 4, name: "Differential Equations with Linear Algebra", code: "MATH3280", category: "Math", description: "First-order differential equations, systems of differential equations, and their applications." },
-  { id: 5, name: "Discrete Math", code: "MATH3355", category: "Math", description: "Logic, sets, relations, and combinatorics." },
-  { id: 6, name: "Intro to Computer Science", code: "CS1612", category: "Computer Science", description: "Introduction to programming and problem-solving." },
-  { id: 7, name: "Object-Oriented Prog & Design", code: "CS1622", category: "Computer Science", description: "Introduction to object-oriented programming and software design principles." },
-  { id: 8, name: "Data Structures and Analysis", code: "CS1632", category: "Computer Science", description: "Fundamental data structures and algorithms for efficient problem-solving." },
-  { id: 9, name: "Computer Organization and Architecture", code: "CS2521", category: "Computer Science", description: "Structure and behavior of computer systems, including hardware and software interaction." },
-  { id: 10, name: "General Physics I", code: "PHYS2013", category: "Electives", description: "Introduction to the fundamental principles of physics." },
-  { id: 11, name: "\tIntroduction to Environmental Science", code: "EES1130", category: "Electives", description: "Introduction to environmental science and sustainability." },
-  { id: 12, name: "Principles of Economics: Macroeconomics", code: "ECON1022", category: "Electives", description: "Introduction to macroeconomic principles, including economic growth, inflation, and monetary policy." }
+  { id: 1,  name: "Calculus I",                               code: "MATH1296", category: "Math",             description: "Limits, derivatives, and integrals." },
+  { id: 2,  name: "Calculus II",                              code: "MATH1297", category: "Math",             description: "Advanced integration techniques, infinite sequences and series, and applications of the definite integral." },
+  { id: 3,  name: "Intro to Probability and Statistics I",    code: "STAT3611", category: "Math",             description: "Introduction to probability and statistical inference." },
+  { id: 4,  name: "Differential Equations with Linear Algebra", code: "MATH3280", category: "Math",           description: "First-order differential equations, systems of differential equations, and their applications." },
+  { id: 5,  name: "Discrete Math",                            code: "MATH3355", category: "Math",             description: "Logic, sets, relations, and combinatorics." },
+  { id: 6,  name: "Intro to Computer Science",                code: "CS1612",   category: "Computer Science", description: "Introduction to programming and problem-solving." },
+  { id: 7,  name: "Object-Oriented Prog & Design",            code: "CS1622",   category: "Computer Science", description: "Introduction to object-oriented programming and software design principles." },
+  { id: 8,  name: "Data Structures and Analysis",             code: "CS1632",   category: "Computer Science", description: "Fundamental data structures and algorithms for efficient problem-solving." },
+  { id: 9,  name: "Computer Organization and Architecture",   code: "CS2521",   category: "Computer Science", description: "Structure and behavior of computer systems, including hardware and software interaction." },
+  { id: 10, name: "General Physics I",                        code: "PHYS2013", category: "Electives",        description: "Introduction to the fundamental principles of physics." },
+  { id: 11, name: "Introduction to Environmental Science",    code: "EES1130",  category: "Electives",        description: "Introduction to environmental science and sustainability." },
+  { id: 12, name: "Principles of Economics: Macroeconomics", code: "ECON1022", category: "Electives",        description: "Introduction to macroeconomic principles, including economic growth, inflation, and monetary policy." },
 ];
+
+const Navbar = () => (
+  <nav className="navbar">
+    <span className="nav-name">Nils Smith</span>
+    <div className="nav-links">
+      <a href="#about">About</a>
+      <a href="#coursework">Coursework</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+
+      <div className= "githubLogo">
+        <a href="https://github.com/NilsSmith1" target="_blank" rel="noreferrer"> <img src={githublogo} alt="GitHub" className='githubLogo' /> </a>
+      </div>
+      
+      <div className= "linkedinLogo">
+
+        <a href="https://www.linkedin.com/in/nilsksmith/" target="_blank" rel="noreferrer"> <img src={linkedinlogo} alt="Linked In" className='linkedinLogo' /> </a>
+
+      </div>
+    </div>
+  </nav>
+);
+
+const Hero = () => (
+  <section className="hero" id="about">
+    <div className="hero-text">
+      <p className="hero-eyebrow">University of Minnesota Duluth</p>
+      <h1 className="hero-heading">Math &amp;<br />Computer<br />Science</h1>
+      <p className="hero-bio">
+        Student studying mathematics and computer science with interests in
+        algorithms, data analysis, and software engineering.
+      </p>
+      <div className="hero-actions">
+        <a href="#contact" className="btn-primary">Get in touch</a>
+        <a href="/resume.pdf" className="btn-secondary" target="_blank" rel="noreferrer">View résumé</a>
+      </div>
+    </div>
+    <div className= "logoslarge">
+      <img src={metransparent} alt="Nils Smith" className="portrait" />
+    </div>
+   
+  </section>
+);
 
 const Coursework = () => {
   const [activeTab, setActiveTab] = useState('All');
   const categories = ['All', ...new Set(courses.map(c => c.category))];
-  const filteredCourses = activeTab === 'All' ? courses : courses.filter(course => course.category === activeTab);
-  const groupedCourses = filteredCourses.reduce((groups, course) => {
-    if (!groups[course.category]) groups[course.category] = [];
-    groups[course.category].push(course);
-    return groups;
+
+  const filtered = activeTab === 'All' ? courses : courses.filter(c => c.category === activeTab);
+
+  const grouped = filtered.reduce((acc, course) => {
+    if (!acc[course.category]) acc[course.category] = [];
+    acc[course.category].push(course);
+    return acc;
   }, {});
 
   return (
-    <section className="coursework-section">
-      <h2>University Coursework</h2>
-+
+    <section className="coursework-section" id="coursework">
+      <p className="section-label">University coursework</p>
 
-      <div className="flex gap-4 mb-8 border-b">
+      <div className="tabs">
         {categories.map(cat => (
           <button
             key={cat}
+            className={`tab${activeTab === cat ? ' active' : ''}`}
             onClick={() => setActiveTab(cat)}
-            className={`pb-2 px-4 transition-colors ${
-              activeTab === cat ? 'border-b-2 border-blue-500 text-blue-500 font-bold' : 'text-gray-500 hover:text-blue-400'
-            }`}
           >
             {cat}
           </button>
         ))}
       </div>
-        <div className="container">
-            {Object.keys(groupedCourses).map(category => (
-              <section key={category} className="course-section">
-                <h2 className="category-header">{category}</h2>
 
-                <div className="course-grid">
-                    {groupedCourses[category].map(course => (
-                        <div key={course.id} className = "course-card">
-                            <span className="course-code">{course.code}</span>
-                            <h3>{course.name}</h3>
-                            <p>{course.description}</p>
-                        </div> 
-                    ))}
-                </div>
-                </section>
+      {Object.keys(grouped).map(category => (
+        <div key={category} className="course-group">
+          <p className="category-header">{category}</p>
+          <div className="course-grid">
+            {grouped[category].map(course => (
+              <div key={course.id} className="course-card">
+                <span className="course-code">{course.code}</span>
+                <h3>{course.name}</h3>
+                <p>{course.description}</p>
+              </div>
             ))}
-
-                
+          </div>
         </div>
+      ))}
     </section>
   );
 };
 
+const Projects = () => (
+  <section className="projects-section" id="projects">
+    <p className="section-label">Projects</p>
+    <div className="projects-placeholder">
+      <p>Projects coming soon.</p>
+    </div>
+  </section>
+);
+
+const Footer = () => (
+  <footer className="footer" id="contact">
+
+    <div class="container">
+    <p>nils.k.smith@gmail.com</p>
+    <p>smi03035@umn.edu</p>
+    </div>
+    
+
+    <div className="footer-links">
+      <a href="https://github.com/NilsSmith1" target="_blank" rel="noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/nilsksmith/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a href="/resume.pdf" target="_blank" rel="noreferrer">Résumé</a>
+    </div>
+  </footer>
+);
+
 function App() {
-  const groupedCourses = courses.reduce((groups, course) => {
-    if (!groups[course.category]) groups[course.category] = [];
-    groups[course.category].push(course);
-    return groups;
-  }, {});
-
-  const [count, setCount] = useState(0);
-
+  useEffect(() => {
+    if (window.location.hash) {
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+    window.scrollTo(0, 0);
+  }, []);
   return (
-    <>
-
-      <div className="container">
-      
-        <header>
-            
-           <div class="center">
-            <h1>This site is under construction</h1>
-          </div> 
-        </header>
-
-        <header>
-           <div class="center">
-            <h1>Nils Smith</h1>
-            <img src={metransparent} alt="Nils Smith" width="343" height="379" />
-          </div> 
-        </header>
-
-         <p>Math & Computer Science Student at the University of Minnesota Duluth</p>
-
+    <div className="site-wrapper">
+      <Navbar />
+      <main className="main-content">
+        <Hero />
         <Coursework />
-
-        {Object.keys(groupedCourses).map(category => (
-          <section key={category} className="course-category">
-       
-
-           
-          </section>
-        ))}
-
-      </div>
-    </>
+        <Projects />
+      </main>
+      <Footer />
+    </div>
   );
 }
 
-export default App
+export default App;

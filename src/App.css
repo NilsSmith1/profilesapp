@@ -1,3 +1,47 @@
+
+.site-wrapper {
+  zoom: 1.1;
+}
+
+.logoslarge { 
+  width:100%
+
+} 
+
+/* Backround color */
+body {
+  background-color: #e3ecf4;
+}
+
+/* Github logo */
+.githubLogo {
+  width: 30px;
+  height: 30px;
+}
+
+/* LinkedIn logo */
+.linkedinLogo {
+  width: 50px;
+  height: 50px;
+    position: relative;
+    top: -5px;
+    left: -8px;
+}
+
+/* the picture of me */
+
+.portrait {
+  width: 400px;
+  height: 440px;
+
+  border: none;
+
+}
+.portrait:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0, 0,0, 0.15);
+}
+
 .container {
   max-width: 900px;
   margin: 0 auto;

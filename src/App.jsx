@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
-import metransparent from './assets/metransparent.png';
+import metransparent from './assets/metransparent-removebg.png';
 import './App.css'
 import githublogo from './assets/github.png';
 import linkedinlogo from './assets/linkedin.png';
+
+
 
 const courses = [
   { id: 1,  name: "Calculus I",                               code: "MATH1296", category: "Math",             description: "Limits, derivatives, and integrals." },
@@ -48,7 +50,7 @@ const Hero = () => (
       <h1 className="hero-heading">Math &amp;<br />Computer<br />Science</h1>
       <p className="hero-bio">
         Student studying mathematics and computer science with interests in
-        algorithms, data analysis, and software engineering.
+        finance, data analysis, and systems engineering.
       </p>
       <div className="hero-actions">
         <a href="#contact" className="btn-primary">Get in touch</a>
@@ -119,17 +121,17 @@ const Projects = () => (
 
 const Footer = () => (
   <footer className="footer" id="contact">
+    <div className="container footer-inner">
+      <div className="contact-emails" aria-label="contact emails">
+        <a href="mailto:nils.k.smith@gmail.com" className="email-pill">nils.k.smith@gmail.com</a>
+        <a href="mailto:smi03035@umn.edu" className="email-pill">smi03035@umn.edu</a>
+      </div>
 
-    <div class="container">
-    <p>nils.k.smith@gmail.com</p>
-    <p>smi03035@umn.edu</p>
-    </div>
-    
-
-    <div className="footer-links">
-      <a href="https://github.com/NilsSmith1" target="_blank" rel="noreferrer">GitHub</a>
-      <a href="https://www.linkedin.com/in/nilsksmith/" target="_blank" rel="noreferrer">LinkedIn</a>
-      <a href="/resume.pdf" target="_blank" rel="noreferrer">Résumé</a>
+      <div className="footer-links">
+        <a href="https://github.com/NilsSmith1" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/nilsksmith/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="/resume.pdf" target="_blank" rel="noreferrer">Résumé</a>
+      </div>
     </div>
   </footer>
 );

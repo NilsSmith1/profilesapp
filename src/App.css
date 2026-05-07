@@ -8,10 +8,14 @@
 
 } 
 
-/* Backround color #npm run dev*/
-body {
-  background-color: #e3ecf4;
+:root {
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #4a5568;
+  --color-bg: #e3ecf4;
 }
+
+/* Dark mode variables and body background are defined centrally in index.css. */
+
 
 /* Github logo */
 .githubLogo {
@@ -127,4 +131,60 @@ collapse {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1rem;
+}
+
+/* Footer / contact email styles */
+.footer {
+  border-top: 1px solid rgba(0,0,0,0.06);
+  padding: 1.25rem 0;
+  color: var(--color-text, #0b1220);
+  background: transparent;
+}
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.contact-emails {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.email-pill {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(0,123,255,0.06);
+  color: #0366d6;
+  text-decoration: none;
+  border: 1px solid rgba(3,102,214,0.12);
+  font-size: 0.95rem;
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+.email-pill:hover,
+.email-pill:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(3,102,214,0.12);
+  background: rgba(0,123,255,0.09);
+}
+.footer-links a {
+  margin-left: 0.75rem;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+}
+.footer-links a:hover { text-decoration: underline; }
+
+.hero-heading {
+  color: var(--color-text-primary);
+}
+
+.hero-bio {
+  color: var(--color-text-secondary);
+}
+
+.nav-name, .nav-links a {
+  color: var(--color-text-primary);
 }

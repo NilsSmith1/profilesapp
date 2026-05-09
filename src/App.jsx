@@ -3,7 +3,9 @@ import metransparent from './assets/metransparent-removebg.png';
 import './App.css'
 import githublogo from './assets/github.png';
 import linkedinlogo from './assets/linkedin.png';
-
+import { Routes, Route } from 'react-router-dom'
+import Projects from './pages/Projects'
+import { Link } from 'react-router-dom'
 
 
 const courses = [
@@ -19,15 +21,20 @@ const courses = [
   { id: 10, name: "General Physics I",                        code: "PHYS2013", category: "Electives",        description: "Introduction to the fundamental principles of physics." },
   { id: 11, name: "Introduction to Environmental Science",    code: "EES1130",  category: "Electives",        description: "Introduction to environmental science and sustainability." },
   { id: 12, name: "Principles of Economics: Macroeconomics", code: "ECON1022", category: "Electives",        description: "Introduction to macroeconomic principles, including economic growth, inflation, and monetary policy." },
+  { id: 13, name: "Software Engineering (In Progress)",                     code: "CS3541",   category: "Computer Science", description: "Software development lifecycle, project management, and team collaboration." },
+  {id: 14, name: "Computer Security (In Progress)", code: "CS4332", category: "Computer Science", description: "Fundamental principles of computer security, including cryptography, network security, and secure software development." },
+  {id: 15, name: "Calculus III (In Progress)", code: "MATH3298", category: "Math", description: "Multivariable calculus, including partial derivatives, multiple integrals, and vector calculus." }
+
 ];
 
 const Navbar = () => (
   <nav className="navbar">
-    <span className="nav-name">Nils Smith</span>
+    <span className="nav-name"><Link to='/'>Nils Smith</Link></span>
+
     <div className="nav-links">
-      <a href="#about">About</a>
+      <Link to='/'>About</Link>
       <a href="#coursework">Coursework</a>
-      <a href="#projects">Projects</a>
+      <Link to="/projects">Projects</Link>
       <a href="#contact">Contact</a>
 
       <div className= "githubLogo">
@@ -110,14 +117,7 @@ const Coursework = () => {
   );
 };
 
-const Projects = () => (
-  <section className="projects-section" id="projects">
-    <p className="section-label">Projects</p>
-    <div className="projects-placeholder">
-      <p>Projects coming soon.</p>
-    </div>
-  </section>
-);
+
 
 const Footer = () => (
   <footer className="footer" id="contact">
@@ -146,14 +146,15 @@ function App() {
   return (
     <div className="site-wrapper">
       <Navbar />
-      <main className="main-content">
-        <Hero />
-        <Coursework />
-        <Projects />
-      </main>
+      <Routes>
+        <Route path="/" element={<main className="main-content"><Hero /><Coursework /></main>} />
+        <Route path="/projects" element={<Projects />} />
+      </Routes>
       <Footer />
     </div>
   );
 }
+
+
 
 export default App;

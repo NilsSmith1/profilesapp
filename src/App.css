@@ -188,3 +188,14 @@ collapse {
 .nav-name, .nav-links a {
   color: var(--color-text-primary);
 }
+
+/* ensures nav links inherit color */
+.nav-name a {
+  color: inherit;
+  text-decoration: none;
+}
+.nav-name a:hover,
+.nav-name a:focus {
+  text-decoration: none;
+  color: inherit;
+}

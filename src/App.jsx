@@ -23,7 +23,7 @@ const courses = [
   { id: 12, name: "Principles of Economics: Macroeconomics", code: "ECON1022", category: "Electives",        description: "Introduction to macroeconomic principles, including economic growth, inflation, and monetary policy." },
   { id: 13, name: "Software Engineering (In Progress)",                     code: "CS3541",   category: "Computer Science", description: "Software development lifecycle, project management, and team collaboration." },
   {id: 14, name: "Computer Security (In Progress)", code: "CS4332", category: "Computer Science", description: "Fundamental principles of computer security, including cryptography, network security, and secure software development." },
-  {id: 15, name: "Calculus III (In Progress)", code: "MATH3298", category: "Math", description: "Multivariable calculus, including partial derivatives, multiple integrals, and vector calculus." }
+  {id: 15, name: "Calculus III (In Progress)", code: "MATH3298", category: "Math", description: "Multivariable calculus, including partial derivatives, multiple integrals, and vector calculus. " }
 
 ];
 

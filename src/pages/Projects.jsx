@@ -18,13 +18,21 @@ const projects = [
 ]
 
 
-function Projects() {
+  function Projects() {
     return (
-        <div>
-            <h1>Projects</h1>
-            <p>Projects coming soon.</p>
-            
+      <div>
+        <h1>Projects</h1>
+        <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '1rem'}}>
+          {projects.map(p => (
+          <article key={p.id} className="course-card">
+            <img src={p.image} alt={p.name} style={{width: '100%', height: '140px', objectFit: 'cover', borderRadius: '8px'}} />
+            <h3>{p.name}</h3>
+            <p style={{color: 'var(--color-text-secondary)'}}>{p.description}</p>
+            <a href={p.gitlink} target="_blank" rel="noreferrer">View on GitHub</a>
+          </article>
+          ))}
         </div>
+      </div>
     )
-}
+  }
 export default Projects

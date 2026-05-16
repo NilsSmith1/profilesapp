@@ -4,7 +4,7 @@
 }
 
 .logoslarge { 
-  width:100%
+  width: 100%;
 
 } 
 
@@ -51,6 +51,8 @@
   margin: 0 auto;
   padding: 2rem;
   font-family: 'Inter', system-ui, sans-serif;
+}
+
 html { overflow-y: scroll; }
 
 button {
@@ -62,17 +64,12 @@ button:focus {
   box-shadow: 0 0 0 4px rgba(37,99,235,0.25);
   border-color: transparent;
 }
-
-collapse {
+.collapse {
   max-height: 0;
   overflow: hidden;
   transition: max-height 300ms ease;
 }
-.collapse.open { max-height: 300px; } 
-  transition: transform 0.2s ease;
-  background: white;
-  color: #333;
-}
+.collapse.open { max-height: 300px; }
 /* The base "Box" style */
 .course-card {
   padding: 1.5rem;
@@ -187,12 +184,16 @@ collapse {
 
 .nav-name, .nav-links a {
   color: var(--color-text-primary);
+  transform: translateY(7px);
 }
 
 /* ensures nav links inherit color */
 .nav-name a {
   color: inherit;
   text-decoration: none;
+  font-size: 30px;
+ transform: translateY(-20px);
+
 }
 .nav-name a:hover,
 .nav-name a:focus {

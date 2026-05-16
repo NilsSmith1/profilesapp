@@ -42,7 +42,7 @@ const Hero = () => (
         finance, data analysis, and systems engineering.
       </p>
       <div className="hero-actions">
-        <a href="#contact" className="btn-primary">Get in touch</a>
+        {/* <a href="#contact" className="btn-primary">Get in touch</a> */}
         <a href="/resume.pdf" className="btn-secondary" target="_blank" rel="noreferrer">View résumé</a>
       </div>
     </div>

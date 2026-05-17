@@ -7,7 +7,7 @@ import { Routes, Route } from 'react-router-dom'
 import Projects from './pages/Projects'
 import { Link } from 'react-router-dom'
 import Coursework from './pages/Coursework'
-
+import Resume from './pages/Resume'   
 
 
 const Navbar = () => (
@@ -43,7 +43,7 @@ const Hero = () => (
       </p>
       <div className="hero-actions">
         {/* <a href="#contact" className="btn-primary">Get in touch</a> */}
-        <a href="/resume.pdf" className="btn-secondary" target="_blank" rel="noreferrer">View résumé</a>
+        <a href="/resume" className="btn-secondary">View résumé</a>
       </div>
     </div>
     <div className= "logoslarge">
@@ -53,7 +53,6 @@ const Hero = () => (
   </section>
 );
 
-// Coursework moved to src/pages/Coursework.jsx
 
 
 
@@ -69,6 +68,7 @@ const Footer = () => (
         <a href="https://github.com/NilsSmith1" target="_blank" rel="noreferrer">GitHub</a>
         <a href="https://www.linkedin.com/in/nilsksmith/" target="_blank" rel="noreferrer">LinkedIn</a>
         <a href="/resume.pdf" target="_blank" rel="noreferrer">Résumé</a>
+
       </div>
     </div>
   </footer>
@@ -88,6 +88,7 @@ function App() {
         <Route path="/" element={<main className="main-content"><Hero /><Coursework /></main>} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/coursework" element={<Coursework />} />
+        <Route path="/resume" element={<Resume />} />
       </Routes>
       <Footer />
     </div>

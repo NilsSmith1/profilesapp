@@ -1,5 +1,4 @@
-# Personal Portfolio Website
-**[nilsksmith.com](https://www.nilsksmith.com)**
+# Personal Portfolio Website **[nilsksmith.com](https://www.nilsksmith.com)**
 A small website I built as a way to share professional information about myself. 
 
 ## Built with React + Vite

@@ -87,7 +87,7 @@ function App() {
     <div className="site-wrapper">
       <Navbar />
       <Routes>
-        <Route path="/" element={<main className="main-content"><Hero /><Coursework /></main>} />
+        <Route path="/" element={<main className="main-content"><Hero /></main>} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/coursework" element={<Coursework />} />
         <Route path="/resume" element={<Resume />} />

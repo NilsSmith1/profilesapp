@@ -45,7 +45,7 @@ const Hero = () => (
       </p>
       <div className="hero-actions">
         {/* <a href="#contact" className="btn-primary">Get in touch</a> */}
-        <a href="/resume" className="btn-secondary">View résumé</a>
+        <Link to="/resume" className="btn-secondary">View résumé</Link>
       </div>
     </div>
     <div className= "logoslarge">
@@ -69,7 +69,7 @@ const Footer = () => (
       <div className="footer-links">
         <a href="https://github.com/NilsSmith1" target="_blank" rel="noreferrer">GitHub</a>
         <a href="https://www.linkedin.com/in/nilsksmith/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="/resume.pdf" target="_blank" rel="noreferrer">Résumé</a>
+        <a href="/Nils-Smith-Resume.pdf" target="_blank" rel="noreferrer">Résumé</a>
 
       </div>
     </div>

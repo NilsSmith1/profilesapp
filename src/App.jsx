@@ -8,6 +8,7 @@ import Projects from './pages/Projects'
 import { Link } from 'react-router-dom'
 import Coursework from './pages/Coursework'
 import Resume from './pages/Resume'   
+import Violin from './pages/Violin'
 
 
 const Navbar = () => (
@@ -17,6 +18,7 @@ const Navbar = () => (
     <div className="nav-links">
       <Link to="/coursework">Coursework</Link>
       <Link to="/projects">Projects</Link>
+      <Link to="/violin">Violin</Link>
     
 
       <div className= "githubLogo">
@@ -89,6 +91,7 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/coursework" element={<Coursework />} />
         <Route path="/resume" element={<Resume />} />
+        <Route path="/violin" element={<Violin />} />
       </Routes>
       <Footer />
     </div>
